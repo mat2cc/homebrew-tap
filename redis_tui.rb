@@ -5,20 +5,20 @@
 class RedisTui < Formula
   desc "Redis TUI: view all of your redis data in the terminal"
   homepage "https://github.com/mat2cc/redis_tui"
-  version "0.1.0"
+  version "0.2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/mat2cc/redis_tui/releases/download/v0.1.0/redis_tui_Darwin_x86_64.tar.gz"
-      sha256 "bccbaa61edd8a0c93482449ebfc4b3faac5731a4ca54bdfad53f9d68f2d64250"
+    if Hardware::CPU.arm?
+      url "https://github.com/mat2cc/redis_tui/releases/download/v0.2.0/redis_tui_Darwin_arm64.tar.gz"
+      sha256 "33f4fb9c3d845cb8fa1c91ca4fff5baacee923743010655ad39fce4f84a6446c"
 
       def install
         bin.install "redis_tui"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/mat2cc/redis_tui/releases/download/v0.1.0/redis_tui_Darwin_arm64.tar.gz"
-      sha256 "5c928cde83af8e3edeb7a224ea81c2d48c6f93568c743beb7559fc1d0041457b"
+    if Hardware::CPU.intel?
+      url "https://github.com/mat2cc/redis_tui/releases/download/v0.2.0/redis_tui_Darwin_x86_64.tar.gz"
+      sha256 "ecd524827d9a1d77ead00c17ceec5d5834dce24852f674c38d3a65946b8ae333"
 
       def install
         bin.install "redis_tui"
@@ -28,16 +28,16 @@ class RedisTui < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mat2cc/redis_tui/releases/download/v0.1.0/redis_tui_Linux_arm64.tar.gz"
-      sha256 "469069b432711ad904d4196659a9001dcc1a966690aaf7afeb80d473bba6bd5b"
+      url "https://github.com/mat2cc/redis_tui/releases/download/v0.2.0/redis_tui_Linux_arm64.tar.gz"
+      sha256 "1fda980e3cfd8a66215db5db48bb6a5b9b38080b849547c58cb8c9ada387aa71"
 
       def install
         bin.install "redis_tui"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mat2cc/redis_tui/releases/download/v0.1.0/redis_tui_Linux_x86_64.tar.gz"
-      sha256 "1cae548e43a994020979085a421a74056bc868672b593b420ab8975de93b616e"
+      url "https://github.com/mat2cc/redis_tui/releases/download/v0.2.0/redis_tui_Linux_x86_64.tar.gz"
+      sha256 "d74c8810dfcee830b513bfc9206b1bcdca5fdeb32e1e3fc796b468204703b7f0"
 
       def install
         bin.install "redis_tui"
